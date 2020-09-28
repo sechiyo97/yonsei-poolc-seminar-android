@@ -1,7 +1,6 @@
 package com.example.firstapplication
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +20,8 @@ class MainActivity : AppCompatActivity() {
             else imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
         }
 
-        // wait a bit and focus on edit text
-        Handler(mainLooper).postDelayed({ edit_text.requestFocus() }, 100)
+        // show keyboard by focusing
+        edit_text.requestFocus()
 
         // add on click event
         submit_button.setOnClickListener{
@@ -30,12 +29,19 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
             // show submit data
-            submit_datetime.text = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault()).format(Date())
+            submit_datetime.text = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault()).format(
+                Date()
+            )
             submit_text.text = edit_text.text.toString()
 
             // after submit
             edit_text.text.clear() // clear
-            edit_text.clearFocus() // hide keyboard
+            edit_text.clearFocus()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        edit_text.requestFocus()
     }
 }
