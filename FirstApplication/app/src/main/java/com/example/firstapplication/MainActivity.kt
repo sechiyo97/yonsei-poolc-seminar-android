@@ -1,6 +1,8 @@
 package com.example.firstapplication
 
 import android.os.Bundle
+import android.os.Handler
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -11,6 +13,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // listen for focus change event
+        edit_text.setOnFocusChangeListener { _, hasFocus ->
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            if (hasFocus) imm.showSoftInput(edit_text, 0)
+            else imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
+        }
+
+        // wait a bit and focus on edit text
+        Handler(mainLooper).postDelayed({ edit_text.requestFocus() }, 100)
 
         // add on click event
         submit_button.setOnClickListener{
@@ -25,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
             // after submit
             edit_text.text.clear() // clear
+            edit_text.clearFocus() // hide keyboard
         }
     }
 }
