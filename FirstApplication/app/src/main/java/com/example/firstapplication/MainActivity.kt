@@ -13,9 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // show keyboard by focusing
-        edit_text.requestFocus()
-
         // add on click event
         submit_button.setOnClickListener{
             // show toast on click
