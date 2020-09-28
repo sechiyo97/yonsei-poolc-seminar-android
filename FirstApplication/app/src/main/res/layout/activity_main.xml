@@ -35,4 +35,16 @@
         android:textColor="@android:color/white"
         android:background="@android:color/holo_green_light"
         android:text="완료" />
+    <TextView
+        android:id="@+id/submit_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center" />
+    <TextView
+        android:id="@+id/submit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center" />
 </LinearLayout>
