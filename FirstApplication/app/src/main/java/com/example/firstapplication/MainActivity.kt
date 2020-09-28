@@ -13,13 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // listen for focus change event
-        edit_text.setOnFocusChangeListener { _, hasFocus ->
-            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            if (hasFocus) imm.showSoftInput(edit_text, 0)
-            else imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
-        }
-
         // show keyboard by focusing
         edit_text.requestFocus()
 
@@ -34,9 +27,12 @@ class MainActivity : AppCompatActivity() {
             )
             submit_text.text = edit_text.text.toString()
 
-            // after submit
-            edit_text.text.clear() // clear
-            edit_text.clearFocus()
+            // clear edit text after submit
+            edit_text.text.clear()
+
+            // hide keyboard
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
         }
     }
 
