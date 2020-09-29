@@ -16,6 +16,7 @@ class SplashActivity : AppCompatActivity() {
     fun showMain(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        finish()
     }
     fun showToast(){
         Toast.makeText(this, "Toast", Toast.LENGTH_SHORT).show()
