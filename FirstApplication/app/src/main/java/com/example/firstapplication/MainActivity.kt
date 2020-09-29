@@ -1,5 +1,6 @@
 package com.example.firstapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             // show toast on click
             Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
+            /*
             // show submit data
             submit_datetime.text = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault()).format(Date())
             submit_text.text = edit_text.text.toString()
@@ -28,7 +30,14 @@ class MainActivity : AppCompatActivity() {
             // hide keyboard
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
+             */
+            showResultActivity()
         }
+    }
+    
+    fun showResultActivity(){
+        val intent = Intent(this, ResultActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onResume() {
