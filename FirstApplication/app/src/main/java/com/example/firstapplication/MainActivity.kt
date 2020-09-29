@@ -6,6 +6,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_result.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -34,9 +35,11 @@ class MainActivity : AppCompatActivity() {
             showResultActivity()
         }
     }
-    
+
     fun showResultActivity(){
         val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("submit_datetime", SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault()).format(Date()))
+        intent.putExtra("submit_text", edit_text.text.toString())
         startActivity(intent)
     }
 
