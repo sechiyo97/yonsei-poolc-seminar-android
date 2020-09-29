@@ -139,13 +139,16 @@ fun whilePositive(){
 
 // CLASS
 
-class Person constructor(var name: String, var age: Int)
+class Person constructor(var name: String, var age: Int){
+    fun printInfo() = println("name: $name, age: $age")
+}
 
 fun bob(){
     val bob = Person("Bob", 31)
     println("name: ${bob.name}, age: ${bob.age}")
     bob.age = 32
     println("name: ${bob.name}, age: ${bob.age}")
+    bob.printInfo()
 }
 
 class TestClass {

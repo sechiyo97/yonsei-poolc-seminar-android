@@ -19,42 +19,6 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!-- Introduction to Layout & View -->
-<!-- LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="30dp"
-    android:background="#333333">
-    <TextView android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="50dp"
-        android:textSize="30sp"
-        android:text="Hello, I am a TextView" />
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_launcher_foreground"/>
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Hello, I am a Button" />
-    <EditText
-        android:id="@+id/edit_text"
-        android:gravity="top|start"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@android:color/white"
-        android:hint="뭔가 적어 보세요" />
-</LinearLayout -->
-
 <!-- 1. LinearLayout -->
 <!--LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -130,3 +94,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@android:color/holo_blue_dark"/>
 </androidx.constraintlayout.widget.ConstraintLayout-->
+
+<!-- Make a custom screen -->
+<!-- LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="#333333">
+    <TextView android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="50dp"
+        android:textSize="30sp"
+        android:text="Hello, I am a TextView" />
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_launcher_foreground"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Hello, I am a Button" />
+    <EditText
+        android:id="@+id/edit_text"
+        android:gravity="top|start"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/white"
+        android:hint="뭔가 적어 보세요" />
+</LinearLayout -->
