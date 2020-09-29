@@ -17,8 +17,14 @@ class MainActivity : AppCompatActivity() {
 
         // add on click event
         submit_button.setOnClickListener{
-            // show toast on click
-            Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+
+            // show toast
+            if (edit_text.text.isBlank()) {
+                Toast.makeText(this, "내용을 입력해주세요.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+                showResultActivity()
+            }
 
             /*
             // show submit data
@@ -32,7 +38,6 @@ class MainActivity : AppCompatActivity() {
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
              */
-            showResultActivity()
         }
     }
 
