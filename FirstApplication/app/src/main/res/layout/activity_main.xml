@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    android:background="#eeeecc">
+    android:background="@color/defaultBackground">
     <ImageView
         android:id="@+id/image"
         android:layout_width="30dp"
