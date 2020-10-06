@@ -15,23 +15,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        changeFragment(firstFragment)
+        window.statusBarColor = getColor(R.color.firstColor)
+
         first_button.setOnClickListener{
             changeFragment(firstFragment)
+            window.statusBarColor = getColor(R.color.firstColor)
         }
 
         second_button.setOnClickListener{
             changeFragment(secondFragment)
+            window.statusBarColor = getColor(R.color.secondColor)
         }
 
         third_button.setOnClickListener{
             changeFragment(thirdFragment)
+            window.statusBarColor = getColor(R.color.thirdColor)
         }
 
         fourth_button.setOnClickListener{
             changeFragment(fourthFragment)
+            window.statusBarColor = getColor(R.color.fourthColor)
         }
 
-        changeFragment(firstFragment)
     }
 
     fun changeFragment(fragment: Fragment){
