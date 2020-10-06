@@ -28,7 +28,7 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/white" />
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -36,4 +36,18 @@
         android:textColor="@android:color/white"
         android:background="@android:color/holo_green_light"
         android:text="완료" />
+    <TextView android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:text="" />
+    <TextView android:id="@+id/input_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:text="" />
 </LinearLayout>
