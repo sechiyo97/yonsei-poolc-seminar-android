@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class RegisterActivity : AppCompatActivity() {
+class EditNameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.edit_name_register)
 
         submit_button.setOnClickListener{
             saveUserName()

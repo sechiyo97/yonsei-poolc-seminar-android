@@ -3,7 +3,6 @@ package com.example.firstapplication
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -19,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
         }, 2000)
     }
     fun goToRegisterActivity(){
-        val intent = Intent(this, RegisterActivity::class.java)
+        val intent = Intent(this, EditNameActivity::class.java)
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
     }

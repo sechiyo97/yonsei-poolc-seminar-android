@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         edit_name_button.setOnClickListener{
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, EditNameActivity::class.java)
             startActivity(intent)
             finish()
         }
