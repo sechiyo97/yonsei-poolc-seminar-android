@@ -9,9 +9,12 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
         submit_button.setOnClickListener{
             goToMainActivity()
         }
+
+        edit_text.requestFocus()
     }
     fun goToMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
