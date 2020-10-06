@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // 버튼에 onClickListener 추가하여 버튼 클릭 시 함수 실행
         submit_button.setOnClickListener{
             if (edit_text.text.isBlank()) Toast.makeText(this, "값이 없어요!", Toast.LENGTH_LONG).show()
             else clickFunction()

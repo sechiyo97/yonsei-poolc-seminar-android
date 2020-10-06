@@ -14,11 +14,16 @@
         android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:src="@drawable/icon_heart"/>
-    <TextView android:id="@+id/text"
+    <TextView android:id="@+id/greeting_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:text="안녕하세요." />
+    <TextView android:id="@+id/question_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="오늘은 무슨 일이 있으셨나요?" />
     <EditText
         android:id="@+id/edit_text"
