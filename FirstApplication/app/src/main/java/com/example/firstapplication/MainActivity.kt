@@ -1,5 +1,6 @@
 package com.example.firstapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
@@ -17,6 +18,12 @@ class MainActivity : AppCompatActivity() {
         submit_button.setOnClickListener{
             if (edit_text.text.isBlank()) Toast.makeText(this, "값이 없어요!", Toast.LENGTH_LONG).show()
             else clickFunction()
+        }
+
+        edit_name_button.setOnClickListener{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         edit_text.requestFocus() // 에딧텍스트에 포커스를 준다 (Manifest 안에 softInput이 설정되어 있으면 키보드도 나타남)
