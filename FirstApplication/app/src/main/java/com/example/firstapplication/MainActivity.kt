@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         //val userName = intent.getStringExtra("user_name")
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
-        val userName = sharedPreferences.getString("user_name", "")
+        val userName = sharedPreferences.getString("user_name", "이름없음")
         greeting_text.text = "안녕하세요, ${userName}님."
         /*
         매니페스트에서 추가되어야 하는 내용
