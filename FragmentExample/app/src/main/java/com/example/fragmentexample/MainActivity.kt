@@ -2,7 +2,6 @@ package com.example.fragmentexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,36 +13,35 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setFragment(0)
 
-        changeFragment(firstFragment)
-        window.statusBarColor = getColor(R.color.firstColor)
-
-        first_button.setOnClickListener{
-            changeFragment(firstFragment)
-            window.statusBarColor = getColor(R.color.firstColor)
-        }
-
-        second_button.setOnClickListener{
-            changeFragment(secondFragment)
-            window.statusBarColor = getColor(R.color.secondColor)
-        }
-
-        third_button.setOnClickListener{
-            changeFragment(thirdFragment)
-            window.statusBarColor = getColor(R.color.thirdColor)
-        }
-
-        fourth_button.setOnClickListener{
-            changeFragment(fourthFragment)
-            window.statusBarColor = getColor(R.color.fourthColor)
-        }
+        first_button.setOnClickListener{ setFragment(0) }
+        second_button.setOnClickListener{ setFragment(1) }
+        third_button.setOnClickListener{ setFragment(2) }
+        fourth_button.setOnClickListener{ setFragment(3) }
 
     }
 
-    fun changeFragment(fragment: Fragment){
+    fun setFragment(fragmentIndex : Int){
+        val fragment = when(fragmentIndex){
+            0 -> firstFragment
+            1 -> secondFragment
+            2 -> thirdFragment
+            else -> fourthFragment
+        }
+
+        val statusBarColor = when(fragmentIndex){
+            0 -> getColor(R.color.firstColor)
+            1 -> getColor(R.color.secondColor)
+            2 -> getColor(R.color.thirdColor)
+            else -> getColor(R.color.fourthColor)
+        }
+
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.content_view, fragment)
             .commit();
+
+        window.statusBarColor = getColor(statusBarColor)
     }
 }
