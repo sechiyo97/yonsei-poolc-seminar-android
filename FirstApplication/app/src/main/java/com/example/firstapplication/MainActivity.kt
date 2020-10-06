@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, EditNameActivity::class.java)
             startActivity(intent)
             finish()
+            overridePendingTransition(0, R.anim.fade_out)
         }
 
         edit_text.requestFocus() // 에딧텍스트에 포커스를 준다 (Manifest 안에 softInput이 설정되어 있으면 키보드도 나타남)

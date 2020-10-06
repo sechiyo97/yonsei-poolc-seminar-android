@@ -26,5 +26,11 @@ class EditNameActivity : AppCompatActivity() {
         //intent.putExtra("user_name", edit_text.text.toString())
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
+        overridePendingTransition(0, R.anim.fade_out)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        goToMainActivity()
     }
 }

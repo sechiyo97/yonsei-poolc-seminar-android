@@ -21,10 +21,12 @@ class SplashActivity : AppCompatActivity() {
         val intent = Intent(this, EditNameActivity::class.java)
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
+        overridePendingTransition(0, R.anim.fade_out)
     }
     fun goToMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
+        overridePendingTransition(0, R.anim.fade_out)
     }
 }
