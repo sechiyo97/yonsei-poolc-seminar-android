@@ -18,17 +18,33 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/content_view"
         android:background="@android:color/white">
-        <Button
+        <TextView
             android:id="@+id/first_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="First Fragment"/>
-        <Button
+            android:gravity="center"
+            android:text="First"/>
+        <TextView
             android:id="@+id/second_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Second Fragment"/>
+            android:gravity="center"
+            android:text="Second"/>
+        <TextView
+            android:id="@+id/third_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Third"/>
+        <TextView
+            android:id="@+id/fourth_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Fourth"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

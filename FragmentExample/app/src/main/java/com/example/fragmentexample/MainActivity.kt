@@ -8,6 +8,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     val firstFragment = FirstFragment()
     val secondFragment = SecondFragment()
+    val thirdFragment = ThirdFragment()
+    val fourthFragment = FourthFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +21,14 @@ class MainActivity : AppCompatActivity() {
 
         second_button.setOnClickListener{
             changeFragment(secondFragment)
+        }
+
+        third_button.setOnClickListener{
+            changeFragment(thirdFragment)
+        }
+
+        fourth_button.setOnClickListener{
+            changeFragment(fourthFragment)
         }
 
         changeFragment(firstFragment)
