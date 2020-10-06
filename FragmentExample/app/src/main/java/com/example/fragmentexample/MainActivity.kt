@@ -42,6 +42,6 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.content_view, fragment)
             .commit();
 
-        window.statusBarColor = getColor(statusBarColor)
+        window.statusBarColor = statusBarColor
     }
 }
