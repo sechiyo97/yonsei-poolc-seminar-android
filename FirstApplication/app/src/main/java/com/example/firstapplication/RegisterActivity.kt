@@ -11,10 +11,15 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         submit_button.setOnClickListener{
+            saveUserName()
             goToMainActivity()
         }
 
         edit_text.requestFocus()
+    }
+    fun saveUserName(){
+        val userName = getSharedPreferences("userName", MODE_PRIVATE)
+        userName.edit().putString("user_name", edit_text.text.toString()).apply()
     }
     fun goToMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
