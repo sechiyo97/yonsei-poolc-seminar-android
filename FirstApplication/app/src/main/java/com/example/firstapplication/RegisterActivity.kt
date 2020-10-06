@@ -2,21 +2,19 @@ package com.example.firstapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
-class SplashActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
-
-        Handler(mainLooper).postDelayed(
-            { goToNextActivity() },
-            2000)
+        setContentView(R.layout.activity_register)
+        submit_button.setOnClickListener{
+            goToMainActivity()
+        }
     }
-    fun goToNextActivity(){
-        val intent = Intent(this, RegisterActivity::class.java)
+    fun goToMainActivity(){
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
     }
