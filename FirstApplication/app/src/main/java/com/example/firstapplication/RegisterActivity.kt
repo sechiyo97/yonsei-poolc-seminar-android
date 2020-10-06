@@ -18,6 +18,7 @@ class RegisterActivity : AppCompatActivity() {
     }
     fun goToMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("user_name", edit_text.text.toString())
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
     }

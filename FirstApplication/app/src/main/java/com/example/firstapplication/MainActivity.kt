@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         edit_text.requestFocus() // 에딧텍스트에 포커스를 준다 (Manifest 안에 softInput이 설정되어 있으면 키보드도 나타남)
+
+        val userName = intent.getStringExtra("user_name")
+        greeting_text.text = "안녕하세요, ${userName}님."
         /*
         매니페스트에서 추가되어야 하는 내용
         <activity android:name=".MainActivity"
