@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +17,8 @@ class SplashActivity : AppCompatActivity() {
         Handler(mainLooper).postDelayed({
             if (userName == null) goToRegisterActivity()
             else goToMainActivity()
+            heart_image.animate().scaleX(0f)
+            heart_image.animate().scaleY(0f)
         }, 2000)
     }
     fun goToRegisterActivity(){
