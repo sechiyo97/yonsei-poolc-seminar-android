@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_splash.*
 
 class EditNameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +14,10 @@ class EditNameActivity : AppCompatActivity() {
         submit_button.setOnClickListener{
             saveUserName()
             goToMainActivity()
+
+            submit_button.animate().rotationBy(360f)
+            submit_button.animate().scaleX(0f)
+            submit_button.animate().scaleY(0f)
         }
 
         edit_text.requestFocus()

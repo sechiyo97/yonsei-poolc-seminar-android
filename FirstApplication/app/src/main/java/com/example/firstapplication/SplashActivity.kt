@@ -17,6 +17,7 @@ class SplashActivity : AppCompatActivity() {
         Handler(mainLooper).postDelayed({
             if (userName == null) goToRegisterActivity()
             else goToMainActivity()
+
             heart_image.animate().scaleX(0f)
             heart_image.animate().scaleY(0f)
         }, 2000)
