@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         submit_button.setOnClickListener{
             if (edit_text.text.isBlank()) Toast.makeText(this, "값이 없어요!", Toast.LENGTH_LONG).show()
             else clickFunction()
+
+            submit_button.animate().rotationBy(360f)
         }
 
         edit_name_button.setOnClickListener{
