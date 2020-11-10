@@ -10,6 +10,10 @@ class PostListActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post_list)
 
+        val sharedPreferences = getSharedPreferences("user_info", MODE_PRIVATE)
+        val userName = sharedPreferences.getString("user_name", null)
+        if(userName == null) goToNameActivity()
+
         setPostData() // 저장된 데이터 불러오기
 
         new_post_button.setOnClickListener {
@@ -17,10 +21,6 @@ class PostListActivity :AppCompatActivity() {
         }
     }
 
-    fun goToMainActivity(){
-        val intent = Intent(this, MainActivity::class.java)
-        startActivityForResult(intent, 1000) // 이름액티비티 실행
-    }
 
     // 상위 액티비티가 꺼졌을 때 실행하는 코드
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -36,5 +36,15 @@ class PostListActivity :AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("post_info", MODE_PRIVATE)
         time_text.text = sharedPreferences.getString("post_time", "없음")
         input_text.text = sharedPreferences.getString("post_input", "없음")
+    }
+
+    fun goToMainActivity(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivityForResult(intent, 1000) // 이름액티비티 실행
+    }
+
+    fun goToNameActivity(){
+        val intent = Intent(this, NameActivity::class.java)
+        startActivity(intent) // 이름액티비티 실행
     }
 }

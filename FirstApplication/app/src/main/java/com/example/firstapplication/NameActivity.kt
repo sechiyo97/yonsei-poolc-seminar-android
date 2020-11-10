@@ -25,8 +25,7 @@ class NameActivity : AppCompatActivity() {
             .edit()
             .putString("user_name", name_edit_text.text.toString())
             .apply()
-
-       startActivity(intent) // 메인액티비티 실행
+        setResult(RESULT_OK)
         finish() // 스플래시액티비티 종료
     }
 }
