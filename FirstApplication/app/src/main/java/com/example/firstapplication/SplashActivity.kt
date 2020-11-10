@@ -11,12 +11,23 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        val sharedPreferences = getSharedPreferences("user_info", MODE_PRIVATE)
+        val userName = sharedPreferences.getString("user_name", null)
+
         Handler(mainLooper).postDelayed(
-            { goToNameActivity() },
+            {
+                if (userName == null) goToNameActivity()
+                else goToMainActivity()
+            },
             2000)
     }
     fun goToNameActivity(){
         val intent = Intent(this, NameActivity::class.java)
+        startActivity(intent) // 이름액티비티 실행
+        finish() // 스플래시액티비티 종료
+    }
+    fun goToMainActivity(){
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent) // 이름액티비티 실행
         finish() // 스플래시액티비티 종료
     }
