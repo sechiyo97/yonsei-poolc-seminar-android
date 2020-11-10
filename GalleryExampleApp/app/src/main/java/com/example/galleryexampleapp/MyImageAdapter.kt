@@ -7,8 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
-data class ImageData(val resource : Int, val name : String)
+data class ImageData(val name: String, val resource : String)
 
 class MyImageAdapter : RecyclerView.Adapter<MyImageAdapter.MyViewHolder>(){
     var imageDataList : List<ImageData> = emptyList()
@@ -27,9 +28,8 @@ class MyImageAdapter : RecyclerView.Adapter<MyImageAdapter.MyViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.imageView.setImageResource(imageDataList[position].resource)
         Glide.with(holder.imageView.context)
-            .load("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb2Bg9o%2FbtqGbp6dO0Y%2Fo3BiklhEITjXEYP5dwTvm1%2Fimg.png")
+            .load(imageDataList[position].resource)
             .into(holder.imageView)
         holder.textView.text = imageDataList[position].name
     }

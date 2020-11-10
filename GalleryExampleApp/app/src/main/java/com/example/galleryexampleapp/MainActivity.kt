@@ -18,11 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         val imageDataList = mutableListOf<ImageData>()
         val singleList = mutableListOf(
-            ImageData(R.drawable.img_001, "001"),
-            ImageData(R.drawable.img_002, "002"),
-            ImageData(R.drawable.img_003, "003"),
-            ImageData(R.drawable.img_004, "004"),
-            ImageData(R.drawable.img_005, "005")
+            ImageData(
+                "name string",
+                "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb2Bg9o%2FbtqGbp6dO0Y%2Fo3BiklhEITjXEYP5dwTvm1%2Fimg.png"),
         )
         for (i in 0..100) imageDataList.addAll(singleList)
 
