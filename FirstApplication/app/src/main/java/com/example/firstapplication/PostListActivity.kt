@@ -15,6 +15,13 @@ class PostListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post_list)
 
+        val sharedPresentException = getSharedPreferences("post_data", MODE_PRIVATE)
+        val time = sharedPresentException.getString("time", "")
+        val text = sharedPresentException.getString("text", "")
+
+        time_text.text = time
+        input_text.text =text // 입력값값
+
         new_post_button.setOnClickListener{
             goToMainActivity()
         }
@@ -28,8 +35,10 @@ class PostListActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1000 && resultCode == RESULT_OK) {
             println("OK")
-            val time = data?.getStringExtra("time")
-            val text = data?.getStringExtra("text")
+
+            val sharedPresentException = getSharedPreferences("post_data", MODE_PRIVATE)
+            val time = sharedPresentException.getString("time", "")
+            val text = sharedPresentException.getString("text", "")
 
             time_text.text = time
             input_text.text =text // 입력값값

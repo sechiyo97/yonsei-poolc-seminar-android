@@ -52,8 +52,9 @@ class MainActivity : AppCompatActivity() {
         imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
 
         val intent = Intent()
-        intent.putExtra("time", timeString)
-        intent.putExtra("text", edit_text.text.toString())
+        val sharedPresentException = getSharedPreferences("post_data", MODE_PRIVATE)
+        sharedPresentException.edit().putString("time", timeString).apply()
+        sharedPresentException.edit().putString("text", edit_text.text.toString()).apply()
         setResult(RESULT_OK, intent)
 
         edit_text.text.clear()
