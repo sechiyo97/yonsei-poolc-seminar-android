@@ -14,6 +14,12 @@
         android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:src="@drawable/icon_heart"/>
+    <TextView android:id="@+id/greeting_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="안녕하세요, 알수없음님." />
     <TextView android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

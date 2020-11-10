@@ -13,6 +13,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // intent에서 이름을 가져와서 화면에 표시해 줌.
+        //val userName = intent.getStringExtra("user_name")
+        //greeting_text.text = "안녕하세요, ${userName}님."
+
+        // sharedPreferences에서 이름을 가져와서 화면에 표시해 줌.
+        val sharedPreferences = getSharedPreferences("user_info", MODE_PRIVATE)
+        val userName = sharedPreferences.getString("user_name", "이름 없음")
+        greeting_text.text = "안녕하세요, ${userName}님."
+
         submit_button.setOnClickListener{
             if (edit_text.text.isBlank()) Toast.makeText(this, "값이 없어요!", Toast.LENGTH_LONG).show()
             else clickFunction()

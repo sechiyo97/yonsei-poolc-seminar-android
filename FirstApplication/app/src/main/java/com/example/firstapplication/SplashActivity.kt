@@ -12,12 +12,12 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(mainLooper).postDelayed(
-            { goToMainActivity() },
+            { goToNameActivity() },
             2000)
     }
-    fun goToMainActivity(){
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent) // 메인액티비티 실행
+    fun goToNameActivity(){
+        val intent = Intent(this, NameActivity::class.java)
+        startActivity(intent) // 이름액티비티 실행
         finish() // 스플래시액티비티 종료
     }
 }
