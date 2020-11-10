@@ -15,13 +15,16 @@ class MainActivity : AppCompatActivity() {
 
         val myAdapter = MyImageAdapter()
         recycler_view.adapter = myAdapter
-        myAdapter.imageResourceList = listOf(
-            R.drawable.img_001,
-            R.drawable.img_002,
-            R.drawable.img_003,
-            R.drawable.img_004,
-            R.drawable.img_005
+
+        val imageDataList = listOf(
+            ImageData(R.drawable.img_001, "001"),
+            ImageData(R.drawable.img_002, "002"),
+            ImageData(R.drawable.img_003, "003"),
+            ImageData(R.drawable.img_004, "004"),
+            ImageData(R.drawable.img_005, "005")
         )
+
+        myAdapter.imageDataList = imageDataList
         //myAdapter.notifyDataSetChanged()
 
 
