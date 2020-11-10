@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
-class ImageAdapter : RecyclerView.Adapter<ImageAdapter.MyViewHolder>(){
+class MyImageAdapter : RecyclerView.Adapter<MyImageAdapter.MyViewHolder>(){
     var imageResourceList : List<Int> = emptyList()
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
