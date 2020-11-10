@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         val userName = sharedPreferences.getString("user_name", null)
         Handler(mainLooper).postDelayed({
             if (userName == null) goToRegisterActivity()
-            else goToMainActivity()
+            else goToPostListActivity()
         }, 2000)
     }
     fun goToRegisterActivity(){
@@ -22,8 +22,8 @@ class SplashActivity : AppCompatActivity() {
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
     }
-    fun goToMainActivity(){
-        val intent = Intent(this, MainActivity::class.java)
+    fun goToPostListActivity(){
+        val intent = Intent(this, PostListActivity::class.java)
         startActivity(intent) // 메인액티비티 실행
         finish() // 스플래시액티비티 종료
     }

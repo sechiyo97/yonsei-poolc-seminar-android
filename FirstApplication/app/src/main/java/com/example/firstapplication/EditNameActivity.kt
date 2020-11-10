@@ -12,7 +12,7 @@ class EditNameActivity : AppCompatActivity() {
 
         submit_button.setOnClickListener{
             saveUserName()
-            goToMainActivity()
+            goToNextActivity()
         }
 
         edit_text.requestFocus()
@@ -21,10 +21,9 @@ class EditNameActivity : AppCompatActivity() {
         val userName = getSharedPreferences("userInfo", MODE_PRIVATE)
         userName.edit().putString("user_name", edit_text.text.toString()).apply()
     }
-    fun goToMainActivity(){
-        val intent = Intent(this, MainActivity::class.java)
+    fun goToNextActivity(){
+        val intent = Intent(this, PostListActivity::class.java)
         //intent.putExtra("user_name", edit_text.text.toString())
-        startActivity(intent) // 메인액티비티 실행
-        finish() // 스플래시액티비티 종료
+        startActivity(intent) // 액티비티 실행
     }
 }

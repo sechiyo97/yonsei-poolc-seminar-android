@@ -12,6 +12,9 @@
         <activity android:name=".MainActivity"
             android:windowSoftInputMode="stateVisible">
         </activity>
+        <activity android:name=".PostListActivity"
+            android:windowSoftInputMode="stateVisible">
+        </activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
