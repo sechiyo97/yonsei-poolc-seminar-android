@@ -39,10 +39,23 @@ class MainActivity : AppCompatActivity() {
             android:windowSoftInputMode="stateVisible">
          */
     }
+
     fun clickFunction(){
         //println("SOMETHING")
         Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_LONG).show()
 
+        val timeString = SimpleDateFormat("dd/MM/yyyy hh:mm:ss", Locale.getDefault()).format(Date())
+
+        val sharedPreferences = getSharedPreferences("post_info", MODE_PRIVATE)
+        sharedPreferences
+            .edit()
+            .putString("post_time", timeString)
+            .putString("post_input", edit_text.text.toString())
+            .apply()
+        setResult(RESULT_OK)
+        finish()
+
+        /*
         val timeString = SimpleDateFormat("dd/MM/yyyy hh:mm:ss", Locale.getDefault()).format(Date())
         time_text.text = timeString
         input_text.text = edit_text.text.toString() // 입력값
@@ -52,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         // hide keyboard
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(edit_text.windowToken, 0)
+        */
 
         // 새로운 입력값으로 바꾸고 싶다면......
         // edit_text.setText("새로운 입력값") // 내용 변경

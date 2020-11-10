@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         Handler(mainLooper).postDelayed(
             {
                 if (userName == null) goToNameActivity()
-                else goToMainActivity()
+                else goToPostListActivity()
             },
             2000)
     }
@@ -26,8 +26,8 @@ class SplashActivity : AppCompatActivity() {
         startActivity(intent) // 이름액티비티 실행
         finish() // 스플래시액티비티 종료
     }
-    fun goToMainActivity(){
-        val intent = Intent(this, MainActivity::class.java)
+    fun goToPostListActivity(){
+        val intent = Intent(this, PostListActivity::class.java)
         startActivity(intent) // 이름액티비티 실행
         finish() // 스플래시액티비티 종료
     }
