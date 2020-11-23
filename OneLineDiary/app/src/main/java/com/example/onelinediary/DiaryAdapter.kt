@@ -1,11 +1,14 @@
 package com.example.onelinediary
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -33,6 +36,17 @@ class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<Di
             diaryList.removeAt(position)
             notifyDataSetChanged()
             println("position $position size $itemCount")
+        }
+
+        // 수정 버튼
+        holder.editButton.setOnClickListener {
+            val dialog = AlertDialog.Builder(holder.itemView.context)
+                .setTitle("메모 수정")
+                .setView(EditText(holder.itemView.context))
+                .setPositiveButton("저장", DialogInterface.OnClickListener{ _, _ ->
+                    println("저장!")
+                })
+            dialog.show()
         }
     }
 
