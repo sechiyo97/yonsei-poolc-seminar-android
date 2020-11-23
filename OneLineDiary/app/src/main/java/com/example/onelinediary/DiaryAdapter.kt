@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DiaryAdapter(val activity: Activity, var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
+class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
 
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val datetimeText = itemView.findViewById<TextView>(R.id.text_diary_datetime)
@@ -29,8 +29,7 @@ class DiaryAdapter(val activity: Activity, var diaryList : List<Diary>) : Recycl
 
         // 아이템 누르면 수정 화면으로 이동
         holder.itemView.setOnClickListener {
-            val intent = Intent(activity, WriteActivity::class.java)
-            activity.startActivityForResult(intent, 1000)
+            println("수정수정")
         }
     }
 

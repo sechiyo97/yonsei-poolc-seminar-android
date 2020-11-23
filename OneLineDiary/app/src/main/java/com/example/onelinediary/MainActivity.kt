@@ -8,24 +8,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    var diaryList : List<Diary> = listOf(
+    var diaryList : MutableList<Diary> = mutableListOf(
         Diary(Date(), "new")
     )
+    val adapter = DiaryAdapter(diaryList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         recycler_diary.layoutManager = LinearLayoutManager(this)
-
-        val adapter = DiaryAdapter(this, diaryList)
         recycler_diary.adapter = adapter
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1000 && resultCode == RESULT_OK) {
-            println("got something!")
-        }
     }
 }

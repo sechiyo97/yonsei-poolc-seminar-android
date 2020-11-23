@@ -32,11 +32,23 @@
         android:layout_gravity="bottom"/>
 
 
-    <Button
-        android:id="@+id/button_diary_delete"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_margin="10dp"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:layout_gravity="end|top"
-        android:text="삭제"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_diary_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수정"/>
+
+        <Button
+            android:id="@+id/button_diary_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"/>
+    </LinearLayout>
 </FrameLayout>
