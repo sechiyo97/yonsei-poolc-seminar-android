@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".WriteActivity"
+    android:background="@android:color/darker_gray">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_diary"
+    <LinearLayout
+        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <Button
-        android:id="@+id/button_new_diary"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="새 일기"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="30dp"/>
+        android:orientation="vertical">
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/text_write_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00.00 00:00:00"/>
+
+        <EditText
+            android:id="@+id/edittext_write"
+            android:layout_margin="20dp"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_gravity="center_vertical"/>
+
+        <Button
+            android:id="@+id/button_write_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            android:layout_gravity="center_horizontal|bottom" />
+    </LinearLayout>
 
 </FrameLayout>
