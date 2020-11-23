@@ -12,12 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
-            android:layout_gravity="center"
-            android:id="@+id/text_write_datetime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0000.00.00 00:00:00"/>
 
         <EditText
             android:gravity="top|start"
