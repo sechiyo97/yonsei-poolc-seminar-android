@@ -19,9 +19,7 @@ class MainActivity : AppCompatActivity() {
         //greeting_text.text = "안녕하세요, ${userName}님."
 
         // sharedPreferences에서 이름을 가져와서 화면에 표시해 줌.
-        val sharedPreferences = getSharedPreferences("user_info", MODE_PRIVATE)
-        val userName = sharedPreferences.getString("user_name", "이름 없음")
-        greeting_text.text = "안녕하세요, ${userName}님."
+        setNameData()
 
         name_edit_button.setOnClickListener {
             goToNameActivity()
@@ -74,7 +72,20 @@ class MainActivity : AppCompatActivity() {
 
     fun goToNameActivity(){
         val intent = Intent(this, NameActivity::class.java)
-        startActivity(intent) // 이름액티비티 실행
-        finish()
+        startActivityForResult(intent, 2000) // 이름액티비티 실행
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 2000 && resultCode == RESULT_OK){
+            setNameData()
+        }
+    }
+
+    fun setNameData(){
+        val sharedPreferences = getSharedPreferences("user_info", MODE_PRIVATE)
+        val userName = sharedPreferences.getString("user_name", "이름 없음")
+        greeting_text.text = "안녕하세요, ${userName}님."
     }
 }

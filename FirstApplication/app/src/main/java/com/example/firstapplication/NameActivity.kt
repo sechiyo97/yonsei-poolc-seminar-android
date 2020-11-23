@@ -12,12 +12,11 @@ class NameActivity : AppCompatActivity() {
         setContentView(R.layout.activity_name)
 
         name_submit_button.setOnClickListener {
-            saveNameAndGoToMainActivity()
+            saveNameAndFinish()
         }
     }
-    fun saveNameAndGoToMainActivity(){
-        val intent = Intent(this, MainActivity::class.java)
-
+    fun saveNameAndFinish(){
+        //val intent = Intent(this, MainActivity::class.java)
         //intent.putExtra("user_name", name_edit_text.text.toString())
         // 정보 기기에 저장
         val sharedPreferences = getSharedPreferences("user_info", MODE_PRIVATE)
@@ -26,7 +25,7 @@ class NameActivity : AppCompatActivity() {
             .putString("user_name", name_edit_text.text.toString())
             .apply()
 
-       startActivity(intent) // 메인액티비티 실행
-        finish() // 스플래시액티비티 종료
+        setResult(RESULT_OK)
+        finish()
     }
 }
