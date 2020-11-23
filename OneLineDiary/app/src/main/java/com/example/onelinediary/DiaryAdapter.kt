@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DiaryAdapter : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
-    var diaryList : List<Diary> = emptyList()
+class DiaryAdapter(var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
 
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val datetimeText = itemView.findViewById<TextView>(R.id.text_diary_datetime)
