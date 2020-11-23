@@ -40,12 +40,16 @@ class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<Di
 
         // 수정 버튼
         holder.editButton.setOnClickListener {
+            val editText = EditText(holder.itemView.context)
             val dialog = AlertDialog.Builder(holder.itemView.context)
                 .setTitle("메모 수정")
-                .setView(EditText(holder.itemView.context))
-                .setPositiveButton("저장", DialogInterface.OnClickListener{ _, _ ->
+                .setView(editText)
+                .setPositiveButton("저장") { _, _ ->
                     println("저장!")
-                })
+                    diaryList[position].data = editText.text.toString()
+                    notifyDataSetChanged()
+                }
+                .setNegativeButton("취소", null)
             dialog.show()
         }
     }
