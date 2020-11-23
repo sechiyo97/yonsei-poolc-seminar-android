@@ -9,7 +9,10 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     var diaryList : MutableList<Diary> = mutableListOf(
-        Diary(Date(), "new")
+        Diary(Date(), "new1"),
+        Diary(Date(), "new2"),
+        Diary(Date(), "new3"),
+        Diary(Date(), "new4")
     )
     val adapter = DiaryAdapter(diaryList)
 
