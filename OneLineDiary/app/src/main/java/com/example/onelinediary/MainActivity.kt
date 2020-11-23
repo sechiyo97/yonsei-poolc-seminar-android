@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     var diaryList : List<Diary> = listOf(
         Diary(Date(), "new")
     )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

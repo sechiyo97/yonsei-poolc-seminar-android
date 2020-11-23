@@ -1,6 +1,6 @@
 package com.example.onelinediary
 
-import android.content.Context
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DiaryAdapter(context: Context, var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
+class DiaryAdapter(val activity: Activity, var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
 
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val datetimeText = itemView.findViewById<TextView>(R.id.text_diary_datetime)
