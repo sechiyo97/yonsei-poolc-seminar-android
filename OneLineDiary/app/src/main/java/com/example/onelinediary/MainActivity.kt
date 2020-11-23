@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         recycler_diary.layoutManager = LinearLayoutManager(this)
 
-        val adapter = DiaryAdapter(diaryList)
+        val adapter = DiaryAdapter(this, diaryList)
         recycler_diary.adapter = adapter
     }
 }

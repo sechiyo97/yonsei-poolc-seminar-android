@@ -1,16 +1,19 @@
 package com.example.onelinediary
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DiaryAdapter(var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
+class DiaryAdapter(context: Context, var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
 
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val datetimeText = itemView.findViewById<TextView>(R.id.text_diary_datetime)
         val dataText = itemView.findViewById<TextView>(R.id.text_diary_data)
+        val deleteButton = itemView.findViewById<Button>(R.id.button_diary_delete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiaryViewHolder {
@@ -24,7 +27,8 @@ class DiaryAdapter(var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdap
         holder.dataText.text = diaryList[position].data
 
         // 아이템 누르면 수정 화면으로 이동
-
+        holder.itemView.setOnClickListener {
+        }
     }
 
     override fun getItemCount(): Int {
