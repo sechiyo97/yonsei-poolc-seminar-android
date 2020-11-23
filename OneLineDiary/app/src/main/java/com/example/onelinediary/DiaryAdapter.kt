@@ -22,6 +22,9 @@ class DiaryAdapter(var diaryList : List<Diary>) : RecyclerView.Adapter<DiaryAdap
         // 데이터 뷰에 적용
         holder.datetimeText.text = diaryList[position].datetime.toString()
         holder.dataText.text = diaryList[position].data
+
+        // 아이템 누르면 수정 화면으로 이동
+
     }
 
     override fun getItemCount(): Int {

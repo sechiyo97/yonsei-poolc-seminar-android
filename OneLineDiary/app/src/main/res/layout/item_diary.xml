@@ -23,8 +23,6 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="일기의 내용이 없습니다."/>
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -32,4 +30,13 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         android:layout_gravity="bottom"/>
+
+
+    <Button
+        android:id="@+id/button_diary_delete"
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:text="삭제"/>
 </FrameLayout>
