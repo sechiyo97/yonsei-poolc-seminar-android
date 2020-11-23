@@ -33,6 +33,7 @@ class ProfileAdapter : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() 
         holder.itemView.setOnClickListener{
             val activityContext = holder.itemView.context
             val intent = Intent(activityContext, ChatActivity::class.java)
+            intent.putExtra("user_name", profileList[position].name)
             activityContext.startActivity(intent)
         }
     }
