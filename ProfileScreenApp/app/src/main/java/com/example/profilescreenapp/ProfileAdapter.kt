@@ -1,5 +1,6 @@
 package com.example.profilescreenapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,13 @@ class ProfileAdapter : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() 
         holder.imageProfile.setImageResource(profileList[position].image)
         holder.textName.text = profileList[position].name
         holder.textMessage.text = profileList[position].message
+
+        // 누르면 채팅창 띄우기
+        holder.itemView.setOnClickListener{
+            val activityContext = holder.itemView.context
+            val intent = Intent(activityContext, ChatActivity::class.java)
+            activityContext.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
