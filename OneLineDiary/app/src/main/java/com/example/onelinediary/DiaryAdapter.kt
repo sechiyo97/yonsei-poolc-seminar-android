@@ -1,9 +1,6 @@
 package com.example.onelinediary
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.content.DialogInterface
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
 
@@ -28,7 +27,9 @@ class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<Di
 
     override fun onBindViewHolder(holder: DiaryViewHolder, position: Int) {
         // 데이터 뷰에 적용
-        holder.datetimeText.text = diaryList[position].datetime.toString()
+        val dateTimeText = SimpleDateFormat("dd/MM/yyyy hh:mm:ss", Locale.getDefault())
+            .format(diaryList[position].datetime)
+        holder.datetimeText.text = dateTimeText
         holder.dataText.text = diaryList[position].data
 
         // 아이템 제거
@@ -52,7 +53,7 @@ class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<Di
                     notifyDataSetChanged()
                 }
                 .setNegativeButton("취소", null)
-            
+
             dialog.show()
         }
     }
