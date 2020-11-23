@@ -7,35 +7,34 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.core.view.marginEnd
 import androidx.recyclerview.widget.RecyclerView
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>(){
+class MemoAdapter(var memoList : MutableList<Memo>) : RecyclerView.Adapter<MemoAdapter.MemoViewHolder>(){
 
-    inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val datetimeText = itemView.findViewById<TextView>(R.id.text_diary_datetime)
-        val dataText = itemView.findViewById<TextView>(R.id.text_diary_data)
-        val editButton = itemView.findViewById<Button>(R.id.button_diary_edit)
-        val deleteButton = itemView.findViewById<Button>(R.id.button_diary_delete)
+    inner class MemoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val datetimeText = itemView.findViewById<TextView>(R.id.text_memo_datetime)
+        val dataText = itemView.findViewById<TextView>(R.id.text_memo_data)
+        val editButton = itemView.findViewById<Button>(R.id.button_memo_edit)
+        val deleteButton = itemView.findViewById<Button>(R.id.button_memo_delete)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiaryViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_diary, parent, false)
-        return DiaryViewHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_memo, parent, false)
+        return MemoViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: DiaryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
         // 데이터 뷰에 적용
         val dateTimeText = SimpleDateFormat("dd/MM/yyyy hh:mm:ss", Locale.getDefault())
-            .format(diaryList[position].datetime)
+            .format(memoList[position].datetime)
         holder.datetimeText.text = dateTimeText
-        holder.dataText.text = diaryList[position].data
+        holder.dataText.text = memoList[position].data
 
         // 아이템 제거
         holder.deleteButton.setOnClickListener {
-            diaryList.removeAt(position)
+            memoList.removeAt(position)
             notifyDataSetChanged()
             println("position $position size $itemCount")
         }
@@ -43,13 +42,13 @@ class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<Di
         // 수정 버튼
         holder.editButton.setOnClickListener {
             val editText = EditText(holder.itemView.context)
-            editText.setText(diaryList[position].data)
+            editText.setText(memoList[position].data)
 
             val dialog = AlertDialog.Builder(holder.itemView.context)
                 .setTitle("메모 수정")
                 .setView(editText)
                 .setPositiveButton("저장") { _, _ ->
-                    diaryList[position].data = editText.text.toString()
+                    memoList[position].data = editText.text.toString()
                     notifyDataSetChanged()
                 }
                 .setNegativeButton("취소", null)
@@ -59,6 +58,6 @@ class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<Di
     }
 
     override fun getItemCount(): Int {
-        return diaryList.size
+        return memoList.size
     }
 }

@@ -6,15 +6,15 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_diary"
+        android:id="@+id/recycler_memo"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <Button
-        android:id="@+id/button_new_diary"
+        android:id="@+id/button_new_memo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="새 일기"
+        android:text="새 메모"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="30dp"/>
 
