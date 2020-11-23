@@ -22,5 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         recycler_diary.layoutManager = LinearLayoutManager(this)
         recycler_diary.adapter = adapter
+
+        button_new_diary.setOnClickListener {
+            val newDiary = Diary(Date(), "새로운 한줄 메모입니다.")
+            adapter.diaryList.add(0, newDiary)
+            adapter.notifyDataSetChanged()
+        }
     }
 }
