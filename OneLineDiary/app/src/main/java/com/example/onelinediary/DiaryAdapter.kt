@@ -1,6 +1,7 @@
 package com.example.onelinediary
 
 import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,8 @@ class DiaryAdapter(val activity: Activity, var diaryList : List<Diary>) : Recycl
 
         // 아이템 누르면 수정 화면으로 이동
         holder.itemView.setOnClickListener {
+            val intent = Intent(activity, WriteActivity::class.java)
+            activity.startActivityForResult(intent, 1000)
         }
     }
 

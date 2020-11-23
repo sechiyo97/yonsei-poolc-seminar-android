@@ -1,5 +1,6 @@
 package com.example.onelinediary
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,5 +20,12 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = DiaryAdapter(this, diaryList)
         recycler_diary.adapter = adapter
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1000 && resultCode == RESULT_OK) {
+            println("got something!")
+        }
     }
 }
