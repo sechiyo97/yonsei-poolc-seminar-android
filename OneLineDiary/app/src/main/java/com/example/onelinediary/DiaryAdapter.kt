@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.view.marginEnd
 import androidx.recyclerview.widget.RecyclerView
 import java.text.SimpleDateFormat
 import java.util.*
@@ -48,7 +49,6 @@ class DiaryAdapter(var diaryList : MutableList<Diary>) : RecyclerView.Adapter<Di
                 .setTitle("메모 수정")
                 .setView(editText)
                 .setPositiveButton("저장") { _, _ ->
-                    println("저장!")
                     diaryList[position].data = editText.text.toString()
                     notifyDataSetChanged()
                 }
