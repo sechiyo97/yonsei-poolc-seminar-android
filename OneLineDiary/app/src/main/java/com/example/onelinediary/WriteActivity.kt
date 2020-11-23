@@ -7,8 +7,8 @@ import kotlinx.android.synthetic.main.activity_write.*
 import java.util.*
 
 class WriteActivity : AppCompatActivity(){
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_write)
 
         button_write_save.setOnClickListener {
