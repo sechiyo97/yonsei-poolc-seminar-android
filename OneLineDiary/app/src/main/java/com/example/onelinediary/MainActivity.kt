@@ -36,4 +36,7 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         }
     }
+
 }
+
+class View

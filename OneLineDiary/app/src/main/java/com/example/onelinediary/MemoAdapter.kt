@@ -61,3 +61,4 @@ class MemoAdapter(var memoList : MutableList<Memo>) : RecyclerView.Adapter<MemoA
         return memoList.size
     }
 }
+

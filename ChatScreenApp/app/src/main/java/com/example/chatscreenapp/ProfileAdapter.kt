@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ProfileAdapter(
     var profileList : MutableList<Profile>
-) : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>(){
+) : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() {
 
-    inner class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val profileImageView : ImageView = itemView.findViewById(R.id.image_profile)
-        val nameTextView : TextView = itemView.findViewById(R.id.text_name)
-        val messageTextView : TextView = itemView.findViewById(R.id.text_message)
+    inner class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val profileImageView: ImageView = itemView.findViewById(R.id.image_profile)
+        val nameTextView: TextView = itemView.findViewById(R.id.text_name)
+        val messageTextView: TextView = itemView.findViewById(R.id.text_message)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfileViewHolder {
@@ -31,6 +31,7 @@ class ProfileAdapter(
         holder.nameTextView.text = profile.name
         holder.messageTextView.text = profile.message
 
+
         // 해당 아이템뷰를 누르면 그 사람과의 채팅방으로 이동
         holder.itemView.setOnClickListener {
             val activityContext = holder.itemView.context
@@ -42,5 +43,6 @@ class ProfileAdapter(
 
     override fun getItemCount(): Int {
         return profileList.size
+
     }
 }
